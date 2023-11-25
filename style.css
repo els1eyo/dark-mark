@@ -1,0 +1,120 @@
+:root {
+  --darkgreen: #1a472a;
+  --green: #2a623d;
+  --grey: #5d5d5d;
+  --silver: #aaaaaa;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.navbar {
+  height: 70px;
+  position: relative;
+  background: #000;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.logo {
+  max-width: 200px;
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  flex-grow: 1;
+}
+
+.logo img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.navmenu {
+  position: relative;
+}
+
+.navmenu li {
+  float: left;
+  margin-right: 15px;
+  list-style: none;
+}
+
+.navmenu a {
+  text-decoration: none;
+  color: var(--silver);
+}
+
+.navmenu a:hover {
+  color: var(--green);
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.hamburger,
+.close-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+  font-size: 2rem;
+  color: var(--green);
+}
+
+.header {
+  height: calc(100vh - 70px);
+  background-image: url(./img/deatheaters.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@media screen and (max-width: 768px) {
+  .navmenu {
+    width: 100%;
+    position: absolute;
+    top: 70px;
+    background-color: #000;
+    display: none;
+  }
+
+  .navmenu li {
+    margin-right: 0;
+    float: none;
+    padding: 10px;
+    flex-grow: 1;
+    color: var(--silver);
+    text-align: center;
+  }
+
+  .navmenu li:hover {
+    background-color: var(--darkgreen);
+  }
+
+  .navmenu a:hover {
+    color: var(--silver);
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .close-icon {
+    visibility: hidden;
+  }
+
+  .navmenu.active {
+    display: block;
+  }
+}
